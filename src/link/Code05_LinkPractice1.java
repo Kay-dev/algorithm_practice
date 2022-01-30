@@ -14,7 +14,7 @@ public class Code05_LinkPractice1 {
 
     public static void main(String[] args) {
         Node<Integer> node = new Node<>(1);
-        node.append(2).append(3).append(4).append(5).append(6).append(7);
+        node.add(2).add(3).add(4).add(5).add(6).add(7);
         System.out.println(mainLogic(node,3));
     }
 

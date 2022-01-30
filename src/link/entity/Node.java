@@ -12,12 +12,15 @@ public class Node<T> {
     public Node<T> next;
 
     public Node(T value) {
+        this.last = this;
         this.value = value;
     }
 
-    public Node<T> append(T t) {
-        this.next = new Node<T>(t);
-        return next;
+    public Node<T> add(T t) {
+        Node<T> node = new Node<>(t);
+        last.next = node;
+        last = last.next;
+        return this;
     }
 
     public boolean hasNext() {

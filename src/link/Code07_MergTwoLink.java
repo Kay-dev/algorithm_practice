@@ -12,10 +12,10 @@ public class Code07_MergTwoLink {
     public static void main(String[] args) {
 
         Node<Integer> node1 = new Node<>(1);
-        node1.append(2).append(4).append(5);
+        node1.add(2).add(4).add(5);
 
         Node<Integer> node2 = new Node<>(2);
-        node2.append(3).append(4);
+        node2.add(3).add(4);
         System.out.println(merge(node1,node2));
 
     }

@@ -13,7 +13,7 @@ public class Code01_LinkReverse {
     public static void main(String[] args) {
 
         Node<Integer> node = new Node<>(1);
-        node.append(2).append(3);
+        node.add(2).add(3);
         System.out.println(node);
         Node<Integer> reverse = reverse(node);
         System.out.println(reverse);

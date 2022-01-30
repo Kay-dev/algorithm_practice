@@ -14,7 +14,7 @@ public class Code06_LinkPractice2 {
 
     public static void main(String[] args) {
         Node<Integer> head1 = new Node<>(9);
-        head1.append(9).append(9).append(9);
+        head1.add(9).add(9).add(9);
         Node<Integer> head2 = new Node<>(1);
         System.out.println(func1(head1, head2));
         System.out.println(func2(head1, head2));
@@ -53,7 +53,7 @@ public class Code06_LinkPractice2 {
                 head = new Node<>(s);
                 result = head;
             } else {
-                result = result.append(s);
+                result = result.add(s);
             }
         }
         return head;
@@ -97,7 +97,7 @@ public class Code06_LinkPractice2 {
         }
         // 判断最后一个节点是否需要进位
         if (carry != 0) {
-            lastNode.append(carry);
+            lastNode.add(carry);
         }
         return resultLink;
     }
