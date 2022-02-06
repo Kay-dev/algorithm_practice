@@ -26,7 +26,7 @@ public class CommonUtils {
     public static int[] createArray(int count) {
         Random random = new Random();
         return IntStream.rangeClosed(1, count)
-                .map(i -> random.nextInt(100))
+                .map(i -> random.nextInt(10))
                 .toArray();
     }
 

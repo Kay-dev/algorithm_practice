@@ -1,4 +1,4 @@
-package beginner;
+package sort;
 
 import static utils.CommonUtils.*;
 

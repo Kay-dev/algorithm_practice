@@ -1,11 +1,15 @@
-package beginner;
+package sort;
 
 import static utils.CommonUtils.swap;
 import static utils.CommonUtils.testArraySort;
 
 /**
  * @author weizheng
- * @Description TODO
+ * @Description 插入排序
+ * 先保证0-0区间有序
+ * 再保证0-1区间有序，从第2个数开始从后往前看，比前面的数小，则交换
+ * ...
+ * 保证0-N区间有序。
  * @date 2022/01/24
  */
 public class Code09_InsertionSort {
@@ -21,14 +25,8 @@ public class Code09_InsertionSort {
 
         int length = arr.length;
         for (int i = 1; i < length; i++) {
-            // for (int j = i; j > 0; j--) {
-            //     if (arr[j] < arr[j - 1]) {
-            //         swap(arr, j, j - 1);
-            //     } else {
-            //         break;
-            //     }
-            // }
             int end = i;
+            // 0-i 范围内做到有序
             while (end > 0 && arr[end] < arr[end - 1]) {
                 swap(arr,end,end-1);
                 end--;
