@@ -10,7 +10,7 @@ import java.util.Deque;
  * @Description 快排
  * @date 2022/02/06
  */
-public class Class02_QuickSort {
+public class Code02_QuickSort {
 
     public static void main(String[] args) {
         int[] array = CommonUtils.createArray(15);
@@ -38,6 +38,9 @@ public class Class02_QuickSort {
         if (L >= R) {
             return;
         }
+        // 随机选一个数，换到末尾
+        CommonUtils.swap(arr, L + (int) (Math.random() * (R - L + 1)), R);
+        // 开始分区
         int[] equal = partition(arr, L, R);
         process(arr, L, equal[0] - 1);
         process(arr, equal[1] + 1, R);

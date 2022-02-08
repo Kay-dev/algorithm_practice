@@ -10,7 +10,7 @@ import link.entity.Node;
  * 例如 4->3->6 和 2->5->3 ，因为634+352=986, 所以返回6->8->9
  * @date 2022/01/29
  */
-public class Code06_LinkPractice2 {
+public class Code06_TwoLinkAdd {
 
     public static void main(String[] args) {
         Node<Integer> head1 = new Node<>(9);

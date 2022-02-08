@@ -7,10 +7,10 @@ import utils.CommonUtils;
  * @Description 归并排序
  * @date 2022/02/05
  */
-public class Class01_MergeSort {
+public class Code01_MergeSort {
 
     public static void main(String[] args) {
-        CommonUtils.testArraySort(10, Class01_MergeSort::mergeSort2);
+        CommonUtils.testArraySort(10, Code01_MergeSort::mergeSort2);
     }
 
     /**

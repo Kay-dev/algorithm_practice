@@ -10,7 +10,7 @@ import link.entity.Node;
  * 如 1->2->3->4->5->6->7 ，当k=3时，结果为 (3->2->1)->(6->5->4)->7
  * @date 2022/01/29
  */
-public class Code05_LinkPractice1 {
+public class Code05_LinkReverseByPatition {
 
     public static void main(String[] args) {
         Node<Integer> node = new Node<>(1);
@@ -32,10 +32,12 @@ public class Code05_LinkPractice1 {
         if (end == null) {
             return start;
         }
+        // 将链表的头节点放到第一组的最后一个节点处，准备反转第一组
         head = end;
         reverse(start, k);
-        // 上一组的结尾节点
+        // 记录上一组反转后的结尾节点
         Node<Integer> lastEnd = start;
+        // 循环反转各组
         while (lastEnd.next != null) {
             start = lastEnd.next;
             end = getGroupEnd(start, k);
@@ -44,6 +46,7 @@ public class Code05_LinkPractice1 {
                 return head;
             }
             reverse(start, k);
+            // 将前一组的尾部和这一组反转后的头部连接起来
             lastEnd.next = end;
             lastEnd = start;
         }
