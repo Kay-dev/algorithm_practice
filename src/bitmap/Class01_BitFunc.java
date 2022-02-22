@@ -28,7 +28,6 @@ public class Class01_BitFunc {
     // 一个数组中有两种数出现了奇数次，其余数出现了偶数次，怎么找到并打印这两种数？
     public static int[] findTwoOddNum(int[] array) {
         int a = 0;
-        int b = 0;
         // 假设两个数是a和b，得到a^b的结果
         int oddNum = findOddNum(array);
         // 得到最后一位为1的结果，假设最后一位1出现的位置为1，那么就能知道a和b在第1位的值不同（一个为0，另一个为1）

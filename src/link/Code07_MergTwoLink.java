@@ -27,10 +27,13 @@ public class Code07_MergTwoLink {
         if (link2 == null) {
             return link1;
         }
-
+        // 确定头节点在哪个链表上
         Node<Integer> head = link1.value < link2.value ? link1 : link2;
+        // 链表一上的指针
         Node<Integer> cur1 = head.next;
+        // 链表二上的指针
         Node<Integer> cur2 = head == link1 ? link2 : link1;
+        // 记录当前位置的指针
         Node<Integer> pre = head;
         while (cur1!=null && cur2!=null) {
             if (cur1.value < cur2.value) {
