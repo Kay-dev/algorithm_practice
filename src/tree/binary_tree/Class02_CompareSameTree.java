@@ -3,8 +3,8 @@ package tree.binary_tree;
 import tree.binary_tree.entity.TreeNode;
 
 /**
+ * 给定两个二叉树，用一个函数判断两个树是否结构相同。
  * @author weizheng
- * @Description 给定两个二叉树，用一个函数判断两个树是否结构相同。
  * @date 2022/02/04
  */
 public class Class02_CompareSameTree {

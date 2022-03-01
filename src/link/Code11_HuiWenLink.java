@@ -66,7 +66,7 @@ public class Code11_HuiWenLink {
         }
 
         while (!stack.isEmpty()) {
-            if (head.value != stack.pop()) {
+            if (!head.value.equals(stack.pop())) {
                 return false;
             }
             head = head.next;

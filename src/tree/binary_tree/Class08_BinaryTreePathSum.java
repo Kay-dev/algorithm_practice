@@ -3,8 +3,8 @@ package tree.binary_tree;
 import tree.binary_tree.entity.TreeNode;
 
 /**
- * @author weizheng
- * @Description 能否组成路径和
+ *
+ * 能否组成路径和
  *
  * eg：
  *     5
@@ -15,6 +15,7 @@ import tree.binary_tree.entity.TreeNode;
  *
  * 输入：17
  * 输出：true，因为5+8+4=19,路径存在
+ * @author weizheng
  *
  * @date 2022/02/05
  */

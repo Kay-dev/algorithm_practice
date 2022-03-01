@@ -3,9 +3,9 @@ package tree.binary_tree;
 import tree.binary_tree.entity.TreeNode;
 
 /**
- * @author weizheng
- * @Description 判断一个树是否是搜索二叉树。
+ * 判断一个树是否是搜索二叉树。
  * 搜索二叉树：左树所有节点小于头节点，右树所有节点大于头节点。并且所有子树也必须是搜索二叉树
+ * @author weizheng
  * @date 2022/02/05
  */
 public class Class07_ValidateBinarySearchTree {
