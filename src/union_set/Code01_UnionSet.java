@@ -37,7 +37,7 @@ public class Code01_UnionSet<T> {
      * @return
      */
     public boolean isSameSet(T a, T b) {
-        if (notContansAorB(a, b)) {
+        if (notContainsAorB(a, b)) {
             return false;
         }
         return findFather(nodeMap.get(a)) == findFather(nodeMap.get(b));
@@ -50,17 +50,15 @@ public class Code01_UnionSet<T> {
      * @param b
      */
     public void union(T a, T b) {
-        if (notContansAorB(a, b)) {
+        if (notContainsAorB(a, b)) {
             return;
         }
-
         Node<T> aFather = findFather(nodeMap.get(a));
         Node<T> bFather = findFather(nodeMap.get(b));
         // 若两个本来就在一个集合中，结束
         if (aFather == bFather) {
             return;
         }
-
         Integer aSize = sizeMap.get(aFather);
         Integer bSize = sizeMap.get(bFather);
         // 将小集合的父节点指针指向大集合的父节点，并删除小集合的相关数据
@@ -71,14 +69,24 @@ public class Code01_UnionSet<T> {
         sizeMap.remove(small);
     }
 
-    private boolean notContansAorB(T a, T b) {
+    /**
+     * 返回并查集中的集合数量
+     * @return
+     */
+    public int getSize() {
+        return sizeMap.size();
+    }
+
+
+    private boolean notContainsAorB(T a, T b) {
         return !nodeMap.containsKey(a) || !nodeMap.containsKey(b);
     }
 
     private Node<T> findFather(Node<T> node) {
         Node<T> cur = node;
         List<Node<T>> list = new ArrayList<>();
-        while (parentMap.containsKey(cur)) {
+        // 一直找到最顶层的父节点
+        while (!cur.equals(parentMap.get(cur))) {
             list.add(cur);
             cur = parentMap.get(cur);
         }
