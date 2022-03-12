@@ -35,7 +35,12 @@ public class CommonUtils {
         int trans = arr[a];
         arr[a] = arr[b];
         arr[b] = trans;
+    }
 
+    public static void swap(Object[] arr, int a, int b) {
+        Object trans = arr[a];
+        arr[a] = arr[b];
+        arr[b] = trans;
     }
 
     public static void printArray(int[] arr) {

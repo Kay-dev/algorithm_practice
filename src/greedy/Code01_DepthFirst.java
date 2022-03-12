@@ -1,5 +1,7 @@
 package greedy;
 
+import utils.CommonUtils;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -26,7 +28,8 @@ public class Code01_DepthFirst {
         List<String> list = new ArrayList<>();
         Set<Integer> set = new HashSet<>();
         // 获取所有可能的字符串拼接结果
-        process(strings, set, "", list);
+        // process(strings, set, "", list);
+        process2(strings,0,list);
         // 找出字典序最小的那一个，并返回
         return list.stream()
                 .reduce((i, j) -> i.compareTo(j) < 0 ? i : j)
@@ -35,7 +38,7 @@ public class Code01_DepthFirst {
     }
 
     /**
-     * 全排列, 深度优先获取所有可能拼接出的字符串
+     * 全排列递归方式一, 深度优先获取所有可能拼接出的字符串
      *
      * @param strings 提供的字符串数组
      * @param used    已经使用过的字符串下标
@@ -54,6 +57,24 @@ public class Code01_DepthFirst {
                     process(strings, used, path + strings[i], all);
                     used.remove(i);
                 }
+            }
+        }
+    }
+
+    /**
+     * 全排列递归方式二，数组中每个字符都有机会来到index位置
+     * @param strings 原字符串数组
+     * @param index 当前进行到数组中哪个位置
+     * @param result 存放字符串结果的集合
+     */
+    public static void process2(String[] strings, int index, List<String> result) {
+        if (index == strings.length) {
+            result.add(String.join("", strings));
+        } else {
+            for (int i = index; i < strings.length; i++) {
+                CommonUtils.swap(strings, index, i);
+                process2(strings, index + 1, result);
+                CommonUtils.swap(strings, index, i);
             }
         }
     }
